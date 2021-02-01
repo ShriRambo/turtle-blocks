@@ -1,3 +1,10 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
 .grid-container {
     height: 100vh;
     width: 100vw;
@@ -7,9 +14,9 @@
     gap: 0px 0px;
     grid-template-areas:
       "Header Header Header Header Header Header Header Header Header Header"
-      "Header Header Header Header Header Header Header Header Header Header"
+      "Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons Buttons"
       "Editor Editor Editor Editor Editor Canvas Canvas Canvas Canvas Canvas"
-      "Editor Editor Editor Editor Editor Buttons Buttons Buttons Buttons Buttons"
+      "Editor Editor Editor Editor Editor Canvas Canvas Canvas Canvas Canvas"
       "Footer Footer Footer Footer Footer Footer Footer Footer Footer Footer";
 }
 
@@ -27,14 +34,12 @@
 }
 .Canvas {
     grid-area: Canvas; 
-    background-color:rgb(255, 0, 200) ;
 }
 .Buttons {
     grid-area: Buttons;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+    justify-content: left;
+    align-content: left;
     flex-wrap: wrap;
     margin: 0 auto;
 }
@@ -46,7 +51,7 @@
 .btn {
 flex: 1 1 auto;
 margin: 10px;
-padding: 30px;
+padding: 10px;
 text-align: center;
 text-transform: uppercase;
 transition: 0.5s;
