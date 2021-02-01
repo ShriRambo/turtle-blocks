@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Turtle walk</title>
+    <!-- Main p5 js -->
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/blockly@4.20201217.0/blockly_compressed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/blockly@4.20201217.0/blocks_compressed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/blockly@4.20201217.0/javascript_compressed.js"></script>
+    <script src="./js/en.js"></script>
+    <script src="./js/sketch.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+
+  <body>
+
+    <div class="grid-container">
+      <div class="Header"></div>
+      <div class="Footer">
+        <img src="https://developers.google.com/blockly/images/logos/logo_standard.png" alt="Blockly logo" style="width: 100px;">
+
+        <img src="https://p5js.org/assets/img/p5js.svg" alt="p5js" style="width: 80px;">
+      </div>
+      <div class="Editor">
+        <div id="blocklyDiv" style="width: 100%;">
+          <xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none"></xml>
+          <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+            <category name="Turtle" colour="#745ba5">
+              <block type="walk_forward"></block>
+              <block type="turn">
+                <field name="NAME">left</field>
+                <field name="NAME">90</field>
+              </block>
+              <block type="rotate_by"></block>
+              <block type="save_state"></block>
+              <block type="load_state"></block>
+              <block type="pen_state">
+                <field name="pen_state">draw_y</field>
+              </block>
+            </category>
+            <sep></sep>
+            <category name="Logic" colour="#5b80a5">
+              <block type="controls_if"></block>
+              <block type="logic_compare">
+                <field name="OP">EQ</field>
+              </block>
+              <block type="logic_operation">
+                <field name="OP">AND</field>
+              </block>
+              <block type="logic_negate"></block>
+              <block type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+              </block>
+              <block type="logic_null"></block>
+              <block type="logic_ternary"></block>
+            </category>
+            <category name="Loops" colour="#5ba55b">
+              <block type="controls_repeat_ext">
+                <value name="TIMES">
+                  <shadow type="math_number">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>
+              </block>
+              <block type="controls_whileUntil">
+                <field name="MODE">WHILE</field>
+              </block>
+              <block type="controls_for">
+                <field name="VAR" id="r:D:+J(:Rl1amXa{J]LO">i</field>
+                <value name="FROM">
+                  <shadow type="math_number">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="TO">
+                  <shadow type="math_number">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>
+                <value name="BY">
+                  <shadow type="math_number">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+              </block>
+              <block type="controls_forEach">
+                <field name="VAR" id="wEF9Tct@l[slj,a+7Xz@">j</field>
+              </block>
+              <block type="controls_flow_statements">
+                <field name="FLOW">BREAK</field>
+              </block>
+            </category>
+            <category name="Math" colour="#5b67a5">
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+              <block type="math_arithmetic">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <shadow type="math_number">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="B">
+                  <shadow type="math_number">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+              </block>
+              <block type="math_single">
+                <field name="OP">ROOT</field>
+                <value name="NUM">
+                  <shadow type="math_number">
+                    <field name="NUM">9</field>
+                  </shadow>
+                </value>
+              </block>
+              <block type="math_trig">
+                <field name="OP">SIN</field>
+                <value name="NUM">
+                  <shadow type="math_number">
+                    <field name="NUM">45</field>
+                  </shadow>
+                </value>
+              </block>
+              <block type="math_constant">
+                <field name="CONSTANT">PI</field>
+              </block>
+              <block type="math_number_property">
+                <mutation divisor_input="false"></mutation>
+                <field name="PROPERTY">EVEN</field>
+                <value name="NUMBER_TO_CHECK">
+                  <shadow type="math_number">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+              </block>
+              <block type="math_round">
+                <field name="OP">ROUND</field>
+                <value name="NUM">
+                  <shadow type="math_number">
+                    <field name="NUM">3.1</field>
+                  </shadow>
+                </value>
+              </block>
+              <block type="math_on_list">
+                <mutation op="SUM"></mutation>
+                <field name="OP">SUM</field>
+              </block>
+              <block type="math_modulo">
+                <value name="DIVIDEND">
+                  <shadow type="math_number">
+                    <field name="NUM">64</field>
+                  </shadow>
+                </value>
+                <value name="DIVISOR">
+                  <shadow type="math_number">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>
+              </block>
+              <block type="math_constrain">
+                <value name="VALUE">
+                  <shadow type="math_number">
+                    <field name="NUM">50</field>
+                  </shadow>
+                </value>
+                <value name="LOW">
+                  <shadow type="math_number">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="HIGH">
+                  <shadow type="math_number">
+                    <field name="NUM">100</field>
+                  </shadow>
+                </value>
+              </block>
+              <block type="math_random_int">
+                <value name="FROM">
+                  <shadow type="math_number">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="TO">
+                  <shadow type="math_number">
+                    <field name="NUM">100</field>
+                  </shadow>
+                </value>
+              </block>
+              <block type="math_random_float"></block>
+            </category>
+            <sep></sep>
+            <category name="Variables" colour="#a55b80" custom="VARIABLE"></category>
+            <category name="Functions" colour="#995ba5" custom="PROCEDURE"></category>
+          </xml>
+
+        </div>
+      </div>
+      <div class="Canvas">
+        <div id="canvas" ></div>
+      </div>
+      <div class="Buttons">
+          <a type="button" class="btn runc" onclick="compileAndExecute()">Run the code</a>
+          <a type="button" class="btn resetc" onclick="canvasReset()">Reset canvas</a>
+      </div>
+    </div>
+
+ 
+<script src="./js/block_generator.js"></script>
+<script src="./js/workspace.js"></script>
+  </body>
+</html>
