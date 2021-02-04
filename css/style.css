@@ -10,7 +10,7 @@ body{
     width: 100vw;
     display: grid;
     grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-    grid-template-rows: 5% 10% 55% 20% 10%;
+    grid-template-rows: 5% 5% 60% 20% 10%;
     gap: 0px 0px;
     grid-template-areas:
       "Header Header Header Header Header Header Header Header Header Header"
@@ -35,45 +35,32 @@ body{
 .Canvas {
     grid-area: Canvas; 
 }
+
 .Buttons {
     grid-area: Buttons;
     display: flex;
     justify-content: left;
-    align-content: left;
-    flex-wrap: wrap;
-    margin: 0 auto;
+    vertical-align: bottom;
 }
-
-
-
-
-
+      
 .btn {
-flex: 1 1 auto;
-margin: 10px;
-padding: 10px;
-text-align: center;
-text-transform: uppercase;
-transition: 0.5s;
-background-size: 200% auto;
-color: white;
-/* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
-box-shadow: 0 0 20px #eee;
-border-radius: 10px;
-cursor: pointer;
-}
-      
-.btn:hover {
-background-position: right center; /* change the direction of the change here */
-}
-      
-.runc {
-background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
-}
-
-
-.resetc {
-background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
-}
-      
+    background:transparent;
+    padding : 5px;
+    margin: 10px;
     
+    cursor: pointer;
+    transition: transform .2s; /* Animation */
+    
+
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    border-bottom-right-radius: 225px 15px;
+    border-bottom-left-radius:15px 255px;
+    border:solid 2px #41403E;
+}
+
+.btn:hover{
+    box-shadow:4px 8px 4px -6px hsla(0,0%,0%,.3);
+    transform: scale(1.3);
+ }
+
