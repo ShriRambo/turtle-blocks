@@ -26,7 +26,7 @@ Blockly.defineBlocksWithJsonArray(
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "NAME",
+        "name": "side",
         "options": [
           [
             "left",
@@ -40,7 +40,7 @@ Blockly.defineBlocksWithJsonArray(
       },
       {
         "type": "field_angle",
-        "name": "NAME",
+        "name": "angle",
         "angle": 90
       }
     ],
@@ -125,14 +125,16 @@ Blockly.JavaScript['turn'] = function(block) {
   var dropdown_name = block.getFieldValue('side');
   var angle_name = block.getFieldValue('angle');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'console.log("Turn"'  + dropdown_name + ' ,' +  angle_name + ')\n';
+  if(dropdown_name == '"left"') angle_name = "-" + angle_name
+
+  var code = 'turtle.rotateBy(' + angle_name + ')\n';
   return code;
 };
 
 Blockly.JavaScript['rotate_by'] = function(block) {
-  var value_rotate_by = Blockly.JavaScript.valueToCode(block, 'rotate_by', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_rotate_by = '-' + Blockly.JavaScript.valueToCode(block, 'rotate_by', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = 'turtle.rotateBy(' + (-1)*value_rotate_by + ')\n';
+  var code = 'turtle.rotateBy(' + value_rotate_by + ')\n';
   return code;
 };
 

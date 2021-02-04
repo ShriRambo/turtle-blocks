@@ -1,1 +1,24 @@
-<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none"></xml>
+<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none">
+  <block type="controls_repeat_ext" id="Qh{P*!4fwPx?ZZCHq6eQ" x="-212" y="-262">
+    <value name="TIMES">
+      <shadow type="math_number" id="/qN_:wk`:p-1oqr?6;Q_">
+        <field name="NUM">6</field>
+      </shadow>
+    </value>
+    <statement name="DO">
+      <block type="walk_forward" id="m-VS9bw:xG[-^uP_6q.m">
+        <value name="units">
+          <block type="math_number" id="1z~m,dW3r`hddG|RP9[e">
+            <field name="NUM">60</field>
+          </block>
+        </value>
+        <next>
+          <block type="turn" id="Yc.nc]Pe2Gtq30cq+qUj">
+            <field name="NAME">left</field>
+            <field name="NAME">90</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

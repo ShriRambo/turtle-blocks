@@ -1,7 +1,7 @@
 // Function to get javascript code from code blocks and execute
 function compileAndExecute(){
-
     var code = Blockly.JavaScript.workspaceToCode(workspace);
+    console.log(code)
     eval(code)
 
 }
@@ -62,7 +62,7 @@ class Turtle{
         
 
         if(this.penDown){
-            console.log(x1, y1)
+            // console.log(x1, y1)
             myp5.line(this.x, this.y, x1,y1)
         }
 
@@ -90,12 +90,7 @@ const s = ( p ) => {
 
         p.angleMode(p.DEGREES);
         
-        //   p.line(0, 0.5*p.height, p.width, 0.5*p.height)
-        //   p.line(0.5*p.width,0, 0.5*p.width, p.height)
-        
-
-        p.stroke(100)
-        p.strokeWeight(4)
+    
         p.noLoop()
     };
   
